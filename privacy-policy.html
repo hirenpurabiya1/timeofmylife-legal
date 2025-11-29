@@ -35,6 +35,12 @@
             margin-bottom: 10px;
             font-size: 1.3em;
         }
+        h4 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
         .last-updated {
             color: #7f8c8d;
             font-style: italic;
@@ -70,6 +76,13 @@
             margin: 20px 0;
             border-radius: 4px;
         }
+        .do-not {
+            background: #ffe6e6;
+            padding: 20px;
+            border-left: 4px solid #dc3545;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
         .compliance-badge {
             display: inline-block;
             background: #28a745;
@@ -97,17 +110,25 @@
             border-top: 2px solid #e0e0e0;
             color: #7f8c8d;
         }
+        .security-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .security-list li:before {
+            content: "🔒 ";
+            margin-right: 8px;
+        }
     </style>
 </head>
 <body>
-    <h1>Privacy Policy – Time of My Life</h1>
+    <h1>Privacy Policy — Time of My Life</h1>
     <p class="last-updated"><strong>Last Updated:</strong> January 2025</p>
 
     <div class="section">
         <h2>1. Introduction</h2>
         <p>Time of My Life ("we", "our", "us") is committed to protecting your privacy.</p>
-        <p>This Privacy Policy explains how we collect, use, and safeguard information when you use our mobile application ("the App").</p>
-        <p>By using the App, you agree to the terms outlined here.</p>
+        <p>This Privacy Policy explains how we collect, use, store, and safeguard information when you use our mobile application ("the App").</p>
+        <p>By using the App, you consent to this Privacy Policy.</p>
     </div>
 
     <div class="section">
@@ -115,43 +136,45 @@
         
         <h3>2.1 Information You Provide</h3>
         <ul>
-            <li><strong>Name and email</strong> (for account creation)</li>
-            <li><strong>Optional self-reported wellness inputs</strong></li>
-            <li><strong>App preferences and settings</strong></li>
+            <li><strong>Email address</strong> (for account creation and communication)</li>
+            <li><strong>App settings and preferences</strong></li>
+            <li><strong>Optional self-reported wellness data</strong></li>
         </ul>
 
         <h3>2.2 Data Accessed With Your Permission</h3>
-        <p>We access certain data only after you grant explicit permission:</p>
+        <p>We only access this data after you grant explicit permission:</p>
         
-        <h4>Screen Time & Device Usage Data</h4>
+        <h4>Digital Behavior Data</h4>
         <ul>
             <li>App usage duration</li>
+            <li>Screen time</li>
             <li>Phone pickups</li>
             <li>Notifications</li>
         </ul>
-        <p><em>(Collected using Apple Family Controls APIs where available)</em></p>
+        <p><em>(Using Apple Family Controls APIs where supported.)</em></p>
 
         <h4>Apple Health Data (Optional)</h4>
         <ul>
             <li>Heart rate</li>
-            <li>HRV (Heart Rate Variability)</li>
+            <li>HRV</li>
             <li>Sleep analysis</li>
-            <li>Steps, movement, workouts</li>
-            <li>Activity summaries</li>
+            <li>Steps and activity</li>
+            <li>Workout summaries</li>
         </ul>
-        <p><strong>Access is permission-based and fully controlled by you.</strong></p>
+        <p><em>Collected via Apple HealthKit APIs.</em></p>
 
         <h4>Oura Ring Data (Optional)</h4>
+        <p>If you connect your Oura account, we may access:</p>
         <ul>
             <li>Readiness score</li>
             <li>Sleep score</li>
             <li>HRV baseline</li>
-            <li>Activity metrics</li>
+            <li>Activity and recovery metrics</li>
         </ul>
-        <p>We only access data you authorize through Oura's OAuth permissions.</p>
+        <p><strong>Access is controlled entirely by your Oura OAuth permissions.</strong></p>
 
         <h3>2.3 Data We Generate</h3>
-        <p>We generate personalized wellness insights and behavioral analytics to help you understand your digital habits, health patterns, and daily rhythms.</p>
+        <p>We generate personalized wellness insights, trend analysis, and usage summaries to help you understand your digital and wellness patterns.</p>
         <p><strong>We do not share these insights with third parties.</strong></p>
     </div>
 
@@ -159,134 +182,150 @@
         <h2>3. How We Use Your Information</h2>
         <p>We use your data to:</p>
         <ul>
-            <li>Provide personalized insights and analytics</li>
-            <li>Improve app experience and features</li>
-            <li>Deliver optional AI-powered recommendations</li>
-            <li>Support integrations (HealthKit, Oura, AI services)</li>
+            <li>Deliver personalized wellbeing insights</li>
+            <li>Provide optional AI-based recommendations</li>
+            <li>Improve app functionality and user experience</li>
+            <li>Support Apple HealthKit and Oura integrations</li>
         </ul>
+    </div>
 
-        <div class="highlight">
-            <h3>We Do NOT:</h3>
+    <div class="section">
+        <div class="do-not">
+            <h2>4. What We Do NOT Do</h2>
+            <p>We do NOT:</p>
             <ul>
                 <li>❌ <strong>Sell your data</strong></li>
-                <li>❌ <strong>Use health or Oura data for marketing or advertising</strong></li>
-                <li>❌ <strong>Use health or Oura data to train machine learning models</strong></li>
-                <li>❌ <strong>Share your data with third parties without your permission</strong></li>
+                <li>❌ <strong>Share your data without your explicit consent</strong></li>
+                <li>❌ <strong>Use your Apple Health or Oura data for advertising</strong></li>
+                <li>❌ <strong>Use your Apple Health or Oura data for marketing</strong></li>
+                <li>❌ <strong>Use Apple Health or Oura data to train machine learning models</strong></li>
+                <li>❌ <strong>Combine health data with third-party marketing or analytics services</strong></li>
             </ul>
-            <p><strong>Health-related data is used only to provide features inside the App.</strong></p>
         </div>
     </div>
 
     <div class="section">
-        <h2>4. Data Storage & Security</h2>
+        <h2>5. Legal Basis for Processing (GDPR)</h2>
+        <p>For users in the EU/EEA, we process data under:</p>
         <ul>
-            <li><strong>All sensitive data is encrypted</strong> during transmission</li>
-            <li><strong>Health and Oura data is stored only as needed</strong> for app functionality and never used for ads or tracking</li>
-            <li><strong>You control</strong> whether you enable cloud backup</li>
-            <li><strong>You can revoke any permission</strong> at any time</li>
+            <li><strong>Consent</strong> (you grant explicit permission)</li>
+            <li><strong>Legitimate interest</strong> (to operate and improve the App)</li>
+        </ul>
+        <p><strong>You may withdraw consent at any time.</strong></p>
+    </div>
+
+    <div class="section">
+        <h2>6. Data Retention</h2>
+        <p>We retain:</p>
+        <ul>
+            <li><strong>Account data</strong> until you delete your account</li>
+            <li><strong>Health or Oura data</strong> only as long as you keep integrations active</li>
+            <li><strong>AI messages</strong> only if you choose to save them</li>
+            <li><strong>Backups</strong> only if you enable cloud sync</li>
         </ul>
 
-        <h3>Data security practices comply with:</h3>
+        <h3>When you delete your account:</h3>
         <ul>
-            <li>Apple HealthKit rules</li>
-            <li>Oura API terms</li>
-            <li>App Store Review Guidelines</li>
-            <li>Industry security guidelines</li>
+            <li>All associated data is <strong>permanently deleted within 30 days</strong></li>
+            <li>Health/Oura connections are <strong>automatically revoked</strong></li>
+            <li>We do <strong>not retain health data</strong> after deletion</li>
         </ul>
     </div>
 
     <div class="section">
-        <h2>5. Third-Party Services</h2>
-        
-        <h3>5.1 Apple HealthKit</h3>
-        <p>We comply with all HealthKit privacy guidelines:</p>
+        <h2>7. Data Security</h2>
+        <p>We use industry-standard technical and organizational measures including:</p>
+        <ul class="security-list">
+            <li><strong>Encryption in transit:</strong> TLS 1.3</li>
+            <li><strong>Encryption at rest:</strong> AES-256</li>
+            <li><strong>Secure authentication</strong></li>
+            <li><strong>Access controls</strong></li>
+            <li><strong>Regular security reviews</strong></li>
+        </ul>
+        <p><em>No system is 100% secure, but we take every reasonable precaution to protect your data.</em></p>
+    </div>
+
+    <div class="section">
+        <h2>8. International Data Transfers</h2>
+        <p>If data is processed outside your region (e.g., United States):</p>
         <ul>
-            <li>Health data is <strong>not shared</strong> with third parties</li>
-            <li>Health data is <strong>not used</strong> for advertising or marketing</li>
-            <li>Health data is <strong>not used</strong> for data mining or LLM training</li>
+            <li>We use <strong>secure, compliant service providers</strong></li>
+            <li>Transfers follow <strong>GDPR safeguards</strong> such as Standard Contractual Clauses (SCCs)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>9. Data Breach Notification</h2>
+        <p>If a data breach occurs:</p>
+        <ul>
+            <li>We will <strong>notify affected users without undue delay</strong></li>
+            <li>We will provide <strong>details of the breach and corrective actions</strong></li>
+            <li><strong>EU users will be notified</strong> in accordance with GDPR timelines</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>10. Third-Party Integrations</h2>
+        
+        <h3>10.1 Apple HealthKit</h3>
+        <p>We comply fully with HealthKit policies:</p>
+        <ul>
+            <li>Data is used <strong>only to provide health-related features</strong></li>
+            <li><strong>Never used</strong> for marketing, advertising, or profiling</li>
         </ul>
 
-        <h3>5.2 Oura Integration (Optional)</h3>
+        <h3>10.2 Oura API</h3>
         <ul>
             <li>Access is <strong>optional</strong></li>
-            <li>You <strong>control permissions</strong></li>
-            <li>Oura data is <strong>never shared externally</strong></li>
-            <li>Oura data is <strong>not used</strong> for advertising or model training</li>
+            <li>Only data you authorize is retrieved</li>
+            <li>Data is <strong>not shared</strong> or used for advertising or AI model training</li>
         </ul>
-        <p>Oura's privacy policy applies to their data: <a href="https://ouraring.com/privacy-policy" target="_blank">https://ouraring.com/privacy-policy</a></p>
+        <p>Oura's privacy policy applies: <a href="https://ouraring.com/privacy-policy" target="_blank">https://ouraring.com/privacy-policy</a></p>
 
-        <h3>5.3 AI Services (Optional)</h3>
-        <p>When you use the AI Coaching feature, your message may be sent to a secure third-party AI provider (e.g., OpenAI) to generate a response.</p>
+        <h3>10.3 AI Providers (e.g., OpenAI)</h3>
+        <p>If you use AI Recommendations:</p>
         <ul>
-            <li>We do <strong>not store</strong> AI conversations long-term unless you choose to save them</li>
-            <li>We do <strong>not use</strong> your data to train AI models</li>
-            <li>OpenAI's privacy policy applies: <a href="https://openai.com/policies/privacy-policy" target="_blank">https://openai.com/policies/privacy-policy</a></li>
+            <li>Your text input is sent securely to an AI provider</li>
+            <li>We do <strong>not store conversations</strong> unless you choose to save them</li>
+            <li>We do <strong>not use your data</strong> to train AI models</li>
         </ul>
+        <p>OpenAI's privacy policy applies: <a href="https://openai.com/policies/privacy-policy" target="_blank">https://openai.com/policies/privacy-policy</a></p>
     </div>
 
     <div class="section">
-        <h2>6. Your Rights</h2>
+        <h2>11. Your Rights</h2>
         <p>You may:</p>
         <ul>
             <li>✅ <strong>Access your data</strong></li>
-            <li>✅ <strong>Delete your data</strong></li>
-            <li>✅ <strong>Revoke third-party permissions</strong></li>
+            <li>✅ <strong>Delete your account</strong></li>
+            <li>✅ <strong>Revoke health/Oura permissions</strong></li>
             <li>✅ <strong>Export your data</strong></li>
-            <li>✅ <strong>Opt out of optional analytics</strong></li>
-            <li>✅ <strong>Delete your account</strong> at any time</li>
+            <li>✅ <strong>Opt out of optional features</strong></li>
         </ul>
+        <p>To exercise your rights, contact:</p>
+        <div class="contact">
+            <p><strong>📧 timeofmylifeai@gmail.com</strong></p>
+        </div>
     </div>
 
     <div class="section">
-        <h2>7. Children's Privacy</h2>
-        <p>The App is <strong>not intended for users under age 13</strong>.</p>
+        <h2>12. Children's Privacy</h2>
+        <p>The App is <strong>not intended for children under 13</strong>.</p>
         <p>We do <strong>not knowingly collect</strong> children's data.</p>
     </div>
 
     <div class="section">
-        <h2>8. Policy Updates</h2>
+        <h2>13. Updates to This Policy</h2>
         <p>We may update this Privacy Policy.</p>
-        <p><strong>Material changes will be communicated</strong> within the App.</p>
-        <p>Continued use indicates acceptance.</p>
+        <p><strong>Significant changes will be communicated</strong> in the App.</p>
     </div>
 
     <div class="section">
-        <h2>9. Contact Us</h2>
+        <h2>14. Contact Us</h2>
         <div class="contact">
-            <p><strong>For privacy inquiries:</strong></p>
-            <ul>
-                <li><strong>Email:</strong> <a href="mailto:hirenp2205@gmail.com">hirenp2205@gmail.com</a></li>
-                <li><strong>Website:</strong> <a href="https://github.com/hirenpurabiya1/Business">https://github.com/hirenpurabiya1/Business</a></li>
-            </ul>
+            <p><strong>Privacy inquiries:</strong></p>
+            <p><strong>📧 <a href="mailto:timeofmylifeai@gmail.com">timeofmylifeai@gmail.com</a></strong></p>
         </div>
-    </div>
-
-    <div class="section">
-        <h2>10. Data Deletion</h2>
-        <p>To delete your data:</p>
-        <ol>
-            <li>Open App → Settings → Account → Delete Account</li>
-            <li>All associated data will be <strong>permanently removed</strong></li>
-        </ol>
-    </div>
-
-    <div class="section">
-        <h2>11. Compliance</h2>
-        <p>This policy complies with:</p>
-        <p>
-            <span class="compliance-badge">Apple HealthKit Terms</span>
-            <span class="compliance-badge">Oura Data Policy</span>
-            <span class="compliance-badge">App Store Guidelines</span>
-            <span class="compliance-badge">GDPR Principles</span>
-            <span class="compliance-badge">CCPA Principles</span>
-        </p>
-        <ul>
-            <li>Apple HealthKit Terms</li>
-            <li>Oura Data Policy</li>
-            <li>App Store Review Guidelines</li>
-            <li>GDPR principles</li>
-            <li>CCPA principles</li>
-        </ul>
     </div>
 
     <div class="footer">
@@ -295,3 +334,4 @@
     </div>
 </body>
 </html>
+
