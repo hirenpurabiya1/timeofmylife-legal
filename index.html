@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time of My Life - Digital Wellness & Productivity</title>
+    <meta name="description" content="A comprehensive digital wellness and productivity platform for iOS. Track screen time, capture moments, achieve goals, and live more intentionally.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* App Theme Colors */
+            --bg-primary: #000000;
+            --bg-surface: #0E1113;
+            --bg-surface-elevated: #1A1A1A;
+            --primary: #00ACC1;
+            --primary-light: #00D4E8;
+            --primary-dark: #008B9C;
+            --text-primary: #E6ECEF;
+            --text-secondary: #B3BCC2;
+            --text-tertiary: #636366;
+            --amber: #F5C77A;
+            --indigo: #2A2F4F;
+            --pink: #C78DA7;
+            --success: #34C759;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-surface);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 24px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 32px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, var(--text-primary), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 24px;
+            color: var(--text-secondary);
+            margin-bottom: 48px;
+            font-weight: 400;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 17px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(0, 172, 193, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(0, 172, 193, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: var(--bg-surface-elevated);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-left: 16px;
+            box-shadow: none;
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--bg-surface);
+            border-color: var(--primary);
+        }
+
+        /* Features Grid */
+        .features {
+            padding: 100px 0;
+            background: var(--bg-surface);
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 64px;
+            letter-spacing: -0.5px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .feature-card {
+            background: var(--bg-surface-elevated);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 32px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-surface);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 48px 0;
+            margin-top: 100px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            color: var(--text-tertiary);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero .subtitle {
+                font-size: 18px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero, .features, .about {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Time of My Life</div>
+                <nav>
+                    <a href="#features">Features</a>
+                    <a href="#about">About</a>
+                    <a href="privacy-policy.html">Privacy</a>
+                    <a href="terms-of-service.html">Terms</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Live More Intentionally</h1>
+                <p class="subtitle">A comprehensive digital wellness and productivity platform that helps you understand, track, and improve your relationship with technology.</p>
+                <div>
+                    <a href="#" class="cta-button">Available on the App Store</a>
+                    <a href="#features" class="cta-button secondary">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <div class="container">
+                <h2 class="section-title">Everything You Need to Live Intentionally</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">📊</span>
+                        <h3>Screen Time Insights</h3>
+                        <p>Real-time tracking and analytics to understand your digital habits and make informed decisions about your technology use.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🌬️</span>
+                        <h3>Breathing Exercises</h3>
+                        <p>Guided breathing sessions with haptic feedback to help you find calm and reduce stress throughout your day.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">✨</span>
+                        <h3>Capture Moments</h3>
+                        <p>Preserve your most meaningful experiences with photos, videos, audio, and emotions. Build a life map of your journey.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🎯</span>
+                        <h3>Life Goals & Dreams</h3>
+                        <p>Set and track your most important goals. See your progress and stay motivated to achieve what matters most.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🧘</span>
+                        <h3>Let Go & Journal</h3>
+                        <p>Release what no longer serves you or save it to your journal. Process emotions and reflect on your journey.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🍅</span>
+                        <h3>Pomodoro Focus</h3>
+                        <p>Stay focused and productive with the Pomodoro technique. Track your focus sessions and build better work habits.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🌅</span>
+                        <h3>Morning & Night Routines</h3>
+                        <p>Build consistent routines that set you up for success. Track your progress and maintain healthy habits.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🦁</span>
+                        <h3>AI Life Coach</h3>
+                        <p>Get personalized insights and guidance from Leo, your AI life coach. Deep, valuable insights based on your complete life context.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about-content">
+                    <h2 class="section-title">Your Life, Your Data, Your Control</h2>
+                    <p>Time of My Life is built with privacy and user empowerment at its core. All your data is stored locally on your device. We help you understand your patterns, make better decisions, and live more intentionally—without compromising your privacy.</p>
+                    <p>Connect with Apple Health, Oura Ring, and other wellness tools to get a complete picture of your well-being. See how your digital habits relate to your physical health, sleep quality, and overall wellness.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="mailto:timeofmylifeai@gmail.com">Contact</a>
+                </div>
+                <div class="copyright">
+                    © 2025 Time of My Life. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
