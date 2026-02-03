@@ -20,4 +20,5 @@ These pages may be updated periodically. The "Last Updated" date is shown at the
 
 ## Contact
 
-For questions about these legal documents, please contact: hirenp2205@gmail.com
+For questions about these legal documents, please contact: thetimeofmylifeapp@gmail.com
+
